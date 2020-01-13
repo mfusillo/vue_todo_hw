@@ -7,6 +7,18 @@
     <script src="./js/bundle.js"></script>
   </head>
   <body>
+    <div id="app">
 
+      <ul>
+        <li v-for="thingToDo in thingsToDo">{{ thingToDo.name }}</li>
+      </ul>
+
+      <form v-on:submit.prevent="addNewThingToDo">
+        <label for="new-thing-todo">New Thing To Do</label>
+        <input type="text" id="new-thing-todo" v-model="newThingToDo.name" />
+      </form>
+
+
+    </div>
   </body>
 </html>
