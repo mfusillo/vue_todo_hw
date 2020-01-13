@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: "Conquer World", isHighPriority: true}
       ],
       newThingToDo: {name: "", isHighPriority: false}
-    }
+    },
+
+    methods: {
+      addNewThingToDo: function() {
+        this.thingsToDo.push(this.newThingToDo);
+        this.newThingToDo = {name: "", isHighPriority: false};
+        }
+      }
   });
 });
