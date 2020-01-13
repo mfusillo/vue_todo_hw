@@ -11,13 +11,18 @@
 
       <ul>
         <li v-for="thingToDo in thingsToDo">
-          <p>{{ thingToDo.name }}</p>
+          <span>{{ thingToDo.name }}</span>
+          <span v-if="thingToDo.isHighPriority">High Priority!</span>
         </li>
       </ul>
 
       <form v-on:submit.prevent="addNewThingToDo">
         <label for="new-thing-todo">New Thing To Do</label>
         <input type="text" id="new-thing-todo" v-model="newThingToDo.name" />
+
+        <input type="radio" v-bind:value="true" v-model="newThingToDo.isHighPriority">High Priority<br>
+        <!-- <input type="radio" v-bind:value="false" v-model="newThingToDo.isHighPriority">Normal Priority<br> -->
+
         <input type="submit" value="Add New Thing To Do" />
       </form>
 
